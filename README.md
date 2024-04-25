@@ -2,9 +2,9 @@
 
 ## TODO
 
-- [ ] Deploy
-- [ ] Set up DB
-- [ ] Hook up domain (once available) 
+- [✅] Deploy
+- [✅] Set up DB
+- [✅] Hook up domain (once available) 
 - [ ] Set up NavBar
 - [ ] Set up Dummy Data
 - [ ] Set up Auth
