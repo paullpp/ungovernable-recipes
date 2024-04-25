@@ -14,7 +14,7 @@ export default function RecipeCard(props: { recipe: Recipe }) {
 
   return (
     <>
-      <a href="/" className="card card-compact w-80 bg-neutral-content">
+      <a href={`/recipes/${recipe.id}`} className="card card-compact w-80 bg-neutral-content">
         <figure><img src={recipe.image} alt={recipe.name} /></figure>
         <div className="card-body">
           <h2 className="card-title">{recipe.name}</h2>

@@ -5,11 +5,11 @@ export default function Navbar() {
     <>
       <div className="navbar border-b">
         <div className="flex-1">
-          <a href="/" className="btn btn-ghost text-2xl text-neutral font-bold">Ungovernable Recipes</a>
+          <a href="/" className="btn btn-ghost sm:text-xl md:text-2xl text-neutral font-bold text-wrap">Ungovernable Recipes</a>
         </div>
         <div className="flex-none gap-2">
           <SignedIn>
-            <button className="btn btn-ghost rounded font-semibold text-lg"> Upload Recipe</button>
+            <a href="/recipes/upload" className="btn btn-ghost rounded font-semibold text-lg"> Upload Recipe</a>
           </SignedIn>
           <div className="form-control">
             <input type="text" placeholder="Search Recipes" className="input input-bordered w-24 md:w-auto" />
