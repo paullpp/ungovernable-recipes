@@ -1,4 +1,5 @@
 "use client";
+import { redirect } from "next/navigation";
 import { useState } from "react";
 import { insertRecipe } from "~/server/queries";
 
@@ -19,6 +20,7 @@ export default function RecipeUpload() {
         setShortDescription("");
         setIngredients("");
         setInstructions("");
+        redirect("/recipes");
       }
     }}>
       <div className="m-10 flex flex-col gap-5">

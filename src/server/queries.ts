@@ -3,7 +3,6 @@ import { db } from "./db";
 import { auth } from "@clerk/nextjs/server";
 import { recipes, recipe_upvotes } from "./db/schema";
 import { eq, sql, and, ilike } from "drizzle-orm";
-import { redirect } from "next/navigation";
 
 export async function insertRecipe(name: string, image: string, shortDescription: string, ingredients: string, instructions: string) {
   const user = auth();
@@ -19,8 +18,6 @@ export async function insertRecipe(name: string, image: string, shortDescription
     description: instructions,
     upvotes: 0
   });
-
-  redirect("/recipes");
 }
 
 export async function getRecipes() {
