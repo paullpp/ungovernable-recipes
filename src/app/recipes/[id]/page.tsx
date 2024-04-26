@@ -1,7 +1,7 @@
 import ShareButton from "~/app/_components/shareButton";
-import { getRecipe } from "../../../server/queries";
+import { getRecipe } from "~/server/queries";
 import UpvoteButton from "~/app/_components/upvoteButton";
-import { didUpvote } from "../../../server/queries";
+import { didUpvote } from "~/server/queries";
 
 export const dynamic = "force-dynamic";
 

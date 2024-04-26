@@ -1,5 +1,5 @@
 "use client";
-import { upvoteRecipe } from "../../server/queries";
+import { upvoteRecipe } from "~/server/queries";
 import { useState } from "react";
 export const dynamic = "force-dynamic";
 

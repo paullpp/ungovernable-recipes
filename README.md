@@ -19,12 +19,14 @@
 - [✅] Export Shopping List & share button
 - [✅] Move Upvote count to Card Preview
 - [✅] Upvote button effect
-- [ ] Uploadthing for images
 - [ ] Rate limiting
 - [ ] Ability to Un-Upvote
+- [ ] Change imports to @
 - [ ] FK constraints (cascade recipe deletion to upvote_recipes)
+- [ ] Uploadthing for images
 - [ ] Tidy up recipe upload infra
 - [ ] Browse Recipes Pagination
-- [ ] Styling
+- [ ] Any Leftover Styling
 - [ ] Mobile compatibility rework
-- [ ] CI/CD / Testing / Build optimization
+---- 1.0 Release
+- [ ] CI/CD / Testing / Build optimization / Branch Protection 

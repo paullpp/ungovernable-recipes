@@ -1,5 +1,5 @@
 import RecipeCard from "./_components/recipeCard";
-import { getPopularRecipes } from "../server/queries";
+import { getPopularRecipes } from "~/server/queries";
 
 export default async function HomePage() {
   const recipes = await getPopularRecipes();

@@ -1,5 +1,5 @@
 import { getRecipes } from "~/server/queries";
-import RecipeCard from "../_components/recipeCard";
+import RecipeCard from "~/app/_components/recipeCard";
 
 export default async function RecipePage() {
   const recipes = await getRecipes();

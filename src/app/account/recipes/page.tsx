@@ -1,4 +1,4 @@
-import { getMyRecipes } from "../../../server/queries";
+import { getMyRecipes } from "~/server/queries";
 import RecipeCard from "~/app/_components/recipeCard";
 
 export default async function MyRecipes() {

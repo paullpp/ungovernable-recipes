@@ -11,6 +11,7 @@ const inter = Inter({
 export const metadata = {
   title: "Ungovernable Recipes",
   description: "recipes without the annoying ads",
+  icons: [{ rel: "icon", url: "/favicon.ico" }],
 };
 
 export default function RootLayout({
