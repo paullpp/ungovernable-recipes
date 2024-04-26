@@ -33,3 +33,16 @@ export const recipes = createTable(
     nameIndex: index("name_idx").on(example.name),
   })
 );
+
+export const recipe_upvotes = createTable(
+  "recipe_upvotes",
+  {
+    id: serial("id").primaryKey(),
+    userId: varchar("userId", { length: 256 }).notNull(),
+    recipeId: integer("recipeId").references(() => recipes.id).notNull(),
+    createdAt: timestamp("created_at")
+      .default(sql`CURRENT_TIMESTAMP`)
+      .notNull(),
+    updatedAt: timestamp("updatedAt"),
+  }
+)
