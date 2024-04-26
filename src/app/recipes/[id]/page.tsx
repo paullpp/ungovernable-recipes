@@ -17,8 +17,8 @@ export default async function RecipePage({
   return (
     <div className="flex flex-col m-10">
       <div className="hero h-96 bg-base-200 rounded">
-        <div className="hero-content flex-col lg:flex-row">
-          {recipe.image ?? <img src={recipe.image!} alt={recipe.name} className="max-w-sm rounded-lg" />}
+        <div className="hero-content flex-col lg:flex-row-reverse">
+          {recipe.image && <img src={recipe.image} alt={recipe.name} className="max-w-sm rounded-lg object-fit h-80 mr-10" />}
           <div>
             <h1 className="text-5xl font-bold">{recipe.name}</h1>
             <p className="py-6">{recipe.shortDescription}</p>

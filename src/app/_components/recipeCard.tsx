@@ -10,7 +10,7 @@ export default async function RecipeCard(props: { recipeId: number, owner?: bool
   return (
     <>
       <a href={`/recipes/${recipe.id}`} className="card card-compact w-80 bg-neutral-content">
-        <figure>{recipe.image ?? <img src={recipe.image!} alt={recipe.name} />}</figure>
+        <figure>{recipe.image && <img src={recipe.image} alt={recipe.name} className="object-fit h-40"/>}</figure>
         <div className="card-body">
           <h2 className="card-title">
             {recipe.name}

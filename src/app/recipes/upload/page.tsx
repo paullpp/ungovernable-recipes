@@ -2,6 +2,7 @@
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 import { insertRecipe } from "~/server/queries";
+import UploadImage from "~/app/_components/uploadImageButton";
 
 export default function RecipeUpload() {
   const [ name, setName ] = useState("");
@@ -29,11 +30,14 @@ export default function RecipeUpload() {
           Recipe Name
           <input type="text" className="grow" placeholder="Apple Pie" value={name} onChange={e => setName(e.target.value)} required/>
         </label>
-        <label className="input input-bordered flex items-center gap-2 bg-white">
-          Image URL
-          <input type="text" className="grow" placeholder="imgur.com/..." value={image} onChange={e => setImage(e.target.value)}/>
-          <span className="badge badge-info">Optional</span>
-        </label>
+        <div className="flex flex-row gap-5">
+          <p>
+            Upload Image (Optional)
+          </p>
+        </div>
+        <div className="flex align-left">
+          <UploadImage setImage={setImage} />
+        </div>
         <label className="input input-bordered flex items-center gap-2 bg-white">
           A short Description of the Recipe
           <input type="text" className="grow" placeholder="The most delicious apple pie..." value={shortDescription} onChange={e => setShortDescription(e.target.value)} required/>

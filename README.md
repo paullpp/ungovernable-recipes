@@ -24,7 +24,7 @@
 - [✅] Add Edit
 - [✅] Add Delete
 - [✅] Fix Search
-- [ ] Uploadthing for images
+- [✅] Uploadthing for images
 - [ ] Add Categories
 - [ ] Add Loading display while router is loading on search
 - [ ] Rate limiting
