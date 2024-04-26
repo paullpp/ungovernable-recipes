@@ -118,7 +118,7 @@ export async function didUpvote(id: number) {
 
 export async function queryRecipes(query: string) {
   const recipes = await db.query.recipes.findMany({
-    where: (model, { ilike }) => ilike(model.name, query)
+    where: (model, { ilike }) => ilike(model.name, `%${query}%`)
   });
 
   return recipes;

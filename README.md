@@ -23,8 +23,8 @@
 - [✅] Search
 - [✅] Add Edit
 - [✅] Add Delete
+- [✅] Fix Search
 - [ ] Uploadthing for images
-- [ ] Fix Search
 - [ ] Add Categories
 - [ ] Add Loading display while router is loading on search
 - [ ] Rate limiting
