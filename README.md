@@ -16,7 +16,9 @@
 - [✅] Popular Recipes (top 15 upvotes)
 - [✅] Your Recipes View
 - [✅] Your Upvoted Recipes View
-- [ ] Export Shopping List
+- [✅] Export Shopping List & share button
+- [✅] Move Upvote count to Card Preview
+- [✅] Upvote button effect
 - [ ] Uploadthing for images
 - [ ] Rate limiting
 - [ ] Ability to Un-Upvote

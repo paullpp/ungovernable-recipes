@@ -104,3 +104,17 @@ export async function getMyUpvotes() {
 
   return results;
 }
+
+export async function didUpvote(id: number) {
+  const user = auth();
+
+  if (!user.userId) {
+    throw new Error ("unauthorized");
+  }
+
+  const upvoteCheck = await db.query.recipe_upvotes.findFirst({
+    where: (model, { eq }) => and(eq(model.recipeId, id), eq(model.userId, user.userId)),
+  });
+
+  return (upvoteCheck ? true : false);
+}
