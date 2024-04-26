@@ -40,7 +40,7 @@ export default function EditRecipe({
     <form onSubmit={async (e) => {
       e.preventDefault();
       if (name != "" && shortDescription != "" && ingredients != "" && instructions != "") {
-        await editRecipe(name, image, shortDescription, ingredients, instructions);
+        await editRecipe(recipeId, name, image, shortDescription, ingredients, instructions);
         setName("");
         setImage("");
         setShortDescription("");

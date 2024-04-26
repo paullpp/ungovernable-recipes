@@ -124,7 +124,7 @@ export async function queryRecipes(query: string) {
   return recipes;
 }
 
-export async function editRecipe(name: string, image: string, shortDescription: string, ingredients: string, instructions: string) {
+export async function editRecipe(id: number, name: string, image: string, shortDescription: string, ingredients: string, instructions: string) {
   const user = auth();
 
   if (!user.userId) {
@@ -137,7 +137,7 @@ export async function editRecipe(name: string, image: string, shortDescription: 
     shortDescription: shortDescription,
     ingredients: ingredients,
     description: instructions
-  }).where(eq(recipes.userId, user.userId));
+  }).where(and(eq(recipes.userId, user.userId), eq(recipes.id, id)));
 }
 
 export async function deleteRecipe(id: number) {
