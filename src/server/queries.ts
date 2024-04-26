@@ -66,5 +66,41 @@ export async function upvoteRecipe(id: number) {
       userId: user.userId
     });
   }
+}
 
+export async function getPopularRecipes() {
+  const recipes = await db.query.recipes.findMany({
+    orderBy: (model, { desc }) => desc(model.upvotes),
+  });
+
+  return recipes.slice(0, 15);
+}
+
+export async function getMyRecipes() {
+  const user = auth();
+
+  if (!user.userId) {
+    throw new Error ("unauthorized");
+  }
+
+  const recipes = await db.query.recipes.findMany({
+    where: (model, { eq }) => eq(model.userId, user.userId)
+  });
+
+  return recipes;
+}
+
+export async function getMyUpvotes() {
+  const user = auth();
+
+  if (!user.userId) {
+    throw new Error ("unauthorized");
+  }
+
+  const results = await db.select()
+                          .from(recipe_upvotes)
+                          .leftJoin(recipes, eq(recipes.id, recipe_upvotes.recipeId))
+                          .where(eq(recipe_upvotes.userId, user.userId));
+
+  return results;
 }

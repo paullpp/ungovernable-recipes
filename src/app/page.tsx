@@ -1,13 +1,9 @@
 import RecipeCard from "./_components/recipeCard";
+import { getPopularRecipes } from "../server/queries";
 
-const recipes = [
-  {id: 0, name: "Tomato Soup", userId: "user_2fblYrgin2pt4pUNFYwF86hTMYA", image: "https://placehold.co/120", shortDescription: "tasty tomato soup made easy", ingredients: "1 Tomato, 1 Soup", description: "Cook tomato, add to soup", upvotes: 0},
-  {id: 1, name: "Onion Soup", userId: "user_2fblYrgin2pt4pUNFYwF86hTMYA", image: "https://placehold.co/120", shortDescription: "tasty onion soup made easy", ingredients: "1 Onion, 1 Soup", description: "Cook onion, add to soup", upvotes: 0},
-  {id: 2, name: "Garlic Soup", userId: "user_2fblYrgin2pt4pUNFYwF86hTMYA", image: "https://placehold.co/120", shortDescription: "tasty garlic soup made easy", ingredients: "1 Garlic, 1 Soup", description: "Cook garlic, add to soup", upvotes: 0},
-  {id: 3, name: "Melon Soup", userId: "user_2fblYrgin2pt4pUNFYwF86hTMYA", image: "https://placehold.co/120", shortDescription: "tasty melon soup made easy", ingredients: "1 Melon, 1 Soup", description: "Cook melon, add to soup", upvotes: 0},
-]
+export default async function HomePage() {
+  const recipes = await getPopularRecipes();
 
-export default function HomePage() {
   return (
     <>
       <div className="hero min-h-96 bg-base-200">
@@ -24,7 +20,7 @@ export default function HomePage() {
         <h1 className="text-3xl font-bold"> Popular Recipes </h1>
         <div className="m-10 flex flex-wrap gap-10">
           {recipes.map((recipe) => (
-            <RecipeCard key={recipe.id} recipe={recipe}/>
+            <RecipeCard key={recipe.id} recipeId={recipe.id}/>
           ))}
         </div>
       </div>
