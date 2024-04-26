@@ -1,7 +1,10 @@
+import EditButton from "./editButton";
 import { getRecipe } from "~/server/queries";
+import DeleteButton from "./deleteButton";
 
-export default async function RecipeCard(props: { recipeId: number }) {
+export default async function RecipeCard(props: { recipeId: number, owner?: boolean }) {
   const recipeId = props.recipeId;
+  const owner = props.owner ?? false; 
   const recipe = await getRecipe(recipeId);
 
   return (
@@ -15,7 +18,15 @@ export default async function RecipeCard(props: { recipeId: number }) {
           <p> 
             {recipe.shortDescription} 
           </p>
-          <div className="badge badge-primary text-white p-2">{recipe.upvotes} Upvotes</div>
+          <div className="flex flex-row gap-5">
+            <div className="badge badge-primary text-white p-2">{recipe.upvotes} Upvotes</div>
+            {owner && (
+              <>
+                <EditButton recipeId={recipe.id} />
+                <DeleteButton recipeId={recipe.id} />
+              </>
+            )}
+          </div>
         </div>
       </a>
     </>

@@ -39,7 +39,7 @@ export const recipe_upvotes = createTable(
   {
     id: serial("id").primaryKey(),
     userId: varchar("userId", { length: 256 }).notNull(),
-    recipeId: integer("recipeId").references(() => recipes.id).notNull(),
+    recipeId: integer("recipeId").references(() => recipes.id, { onDelete: 'cascade'}).notNull(),
     createdAt: timestamp("created_at")
       .default(sql`CURRENT_TIMESTAMP`)
       .notNull(),

@@ -2,7 +2,7 @@
 import { db } from "./db";
 import { auth } from "@clerk/nextjs/server";
 import { recipes, recipe_upvotes } from "./db/schema";
-import { eq, sql, and, ilike } from "drizzle-orm";
+import { eq, sql, and } from "drizzle-orm";
 
 export async function insertRecipe(name: string, image: string, shortDescription: string, ingredients: string, instructions: string) {
   const user = auth();
@@ -122,4 +122,30 @@ export async function queryRecipes(query: string) {
   });
 
   return recipes;
+}
+
+export async function editRecipe(name: string, image: string, shortDescription: string, ingredients: string, instructions: string) {
+  const user = auth();
+
+  if (!user.userId) {
+    throw new Error("unauthorized");
+  }
+  
+  await db.update(recipes).set({
+    name: name,
+    image: image,
+    shortDescription: shortDescription,
+    ingredients: ingredients,
+    description: instructions
+  }).where(eq(recipes.userId, user.userId));
+}
+
+export async function deleteRecipe(id: number) {
+  const user = auth();
+
+  if (!user.userId) {
+    throw new Error("unauthorized");
+  }
+
+  await db.delete(recipes).where(and(eq(recipes.userId, user.userId), eq(recipes.id, id)));
 }

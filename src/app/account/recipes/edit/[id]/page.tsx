@@ -1,21 +1,45 @@
 "use client";
-import { useRouter } from "next/navigation";
-import { useState } from "react";
-import { insertRecipe } from "~/server/queries";
 
-export default function RecipeUpload() {
+import { useRouter } from "next/navigation";
+import { useState, useEffect } from "react";
+import { editRecipe, getRecipe } from "~/server/queries";
+
+export default function EditRecipe({
+  params: { id: recipeId },
+}: {
+  params: { id: number },
+}) {
   const [ name, setName ] = useState("");
   const [ image, setImage ] = useState("");
   const [ shortDescription, setShortDescription ] = useState("");
   const [ ingredients, setIngredients ] = useState("");
   const [ instructions, setInstructions ] = useState("");
   const router = useRouter();
+
+
+  useEffect(() => {
+    // eslint-disable-next-line @typescript-eslint/no-floating-promises
+    (async function getData() {
+      try {
+        const recipe = await getRecipe(recipeId);
+        setName(recipe.name);
+        setImage(recipe.image ?? "");
+        setShortDescription(recipe.shortDescription);
+        setIngredients(recipe.ingredients);
+        setInstructions(recipe.description);
+      } catch (e) {
+        console.log(e);
+      }
+    })();
+  }, []);
+
+
   
   return (
     <form onSubmit={async (e) => {
       e.preventDefault();
       if (name != "" && shortDescription != "" && ingredients != "" && instructions != "") {
-        await insertRecipe(name, image, shortDescription, ingredients, instructions);
+        await editRecipe(name, image, shortDescription, ingredients, instructions);
         setName("");
         setImage("");
         setShortDescription("");

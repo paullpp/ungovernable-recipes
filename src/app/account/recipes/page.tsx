@@ -9,7 +9,7 @@ export default async function MyRecipes() {
       <h1 className="text-2xl font-bold text-neutral">My Recipes</h1>
       <div className="flex flex-wrap gap-5 m-5 mt-10">
         {recipes.map((recipe) => (
-          <RecipeCard key={recipe.id} recipeId={recipe.id}/>
+          <RecipeCard key={recipe.id} recipeId={recipe.id} owner={true} />
         ))}
       </div>
     </div>

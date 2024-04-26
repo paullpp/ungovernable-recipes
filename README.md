@@ -21,11 +21,15 @@
 - [✅] Upvote button effect
 - [✅] Export Shopping List
 - [✅] Search
+- [✅] Add Edit
+- [✅] Add Delete
+- [ ] Uploadthing for images
+- [ ] Fix Search
+- [ ] Add Categories
 - [ ] Add Loading display while router is loading on search
 - [ ] Rate limiting
 - [ ] Ability to Un-Upvote
 - [ ] FK constraints (cascade recipe deletion to upvote_recipes)
-- [ ] Uploadthing for images
 - [ ] Tidy up recipe upload infra
 - [ ] Browse Recipes Pagination
 - [ ] Any Leftover Styling
