@@ -2,7 +2,7 @@
 import { db } from "./db";
 import { auth } from "@clerk/nextjs/server";
 import { recipes, recipe_upvotes } from "./db/schema";
-import { eq, sql, and } from "drizzle-orm";
+import { eq, sql, and, ilike } from "drizzle-orm";
 import { redirect } from "next/navigation";
 
 export async function insertRecipe(name: string, image: string, shortDescription: string, ingredients: string, instructions: string) {
@@ -117,4 +117,12 @@ export async function didUpvote(id: number) {
   });
 
   return (upvoteCheck ? true : false);
+}
+
+export async function queryRecipes(query: string) {
+  const recipes = await db.query.recipes.findMany({
+    where: (model, { ilike }) => ilike(model.name, query)
+  });
+
+  return recipes;
 }

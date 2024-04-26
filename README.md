@@ -19,8 +19,9 @@
 - [✅] share button
 - [✅] Move Upvote count to Card Preview
 - [✅] Upvote button effect
-- [ ] Export Shopping List
-- [ ] Search
+- [✅] Export Shopping List
+- [✅] Search
+- [ ] Add Loading display while router is loading on search
 - [ ] Rate limiting
 - [ ] Ability to Un-Upvote
 - [ ] FK constraints (cascade recipe deletion to upvote_recipes)

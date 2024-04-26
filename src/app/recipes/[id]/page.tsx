@@ -2,6 +2,7 @@ import ShareButton from "~/app/_components/shareButton";
 import { getRecipe } from "~/server/queries";
 import UpvoteButton from "~/app/_components/upvoteButton";
 import { didUpvote } from "~/server/queries";
+import ShoppingList from "~/app/_components/shoppingList";
 
 export const dynamic = "force-dynamic";
 
@@ -24,6 +25,7 @@ export default async function RecipePage({
             <div className="flex flex-row gap-5">
               <UpvoteButton recipeId={Number(recipeId)} upvoted={upvoted} />
               <ShareButton />
+              <ShoppingList shoppingList={recipe.ingredients}/>
             </div>
           </div>
         </div>

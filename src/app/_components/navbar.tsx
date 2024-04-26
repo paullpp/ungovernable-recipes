@@ -1,4 +1,5 @@
 import { SignInButton, SignedIn, SignedOut, UserButton } from "@clerk/nextjs";
+import SearchBar from "./searchBar";
 
 export default function Navbar() {
   return (
@@ -23,9 +24,7 @@ export default function Navbar() {
           <SignedIn>
             <a href="/recipes/upload" className="btn btn-ghost rounded font-semibold text-lg"> Upload Recipe</a>
           </SignedIn>
-          <div className="form-control">
-            <input type="text" placeholder="Search Recipes" className="input input-bordered w-24 md:w-auto" />
-          </div>
+          <SearchBar />
           <div className="dropdown dropdown-end">
             <div tabIndex={0} role="button" className="btn btn-ghost">
               <SignedOut>
