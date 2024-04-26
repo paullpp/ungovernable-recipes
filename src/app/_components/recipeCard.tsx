@@ -15,7 +15,7 @@ export default async function RecipeCard(props: { recipeId: number }) {
           <p> 
             {recipe.shortDescription} 
           </p>
-          <div className="badge badge-secondary">{recipe.upvotes} Upvotes</div>
+          <div className="badge badge-primary text-white p-2">{recipe.upvotes} Upvotes</div>
         </div>
       </a>
     </>
