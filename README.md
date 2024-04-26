@@ -16,9 +16,11 @@
 - [✅] Popular Recipes (top 15 upvotes)
 - [✅] Your Recipes View
 - [✅] Your Upvoted Recipes View
-- [✅] Export Shopping List & share button
+- [✅] share button
 - [✅] Move Upvote count to Card Preview
 - [✅] Upvote button effect
+- [ ] Export Shopping List
+- [ ] Search
 - [ ] Rate limiting
 - [ ] Ability to Un-Upvote
 - [ ] FK constraints (cascade recipe deletion to upvote_recipes)
