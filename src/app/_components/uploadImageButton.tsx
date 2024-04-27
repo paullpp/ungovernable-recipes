@@ -12,6 +12,11 @@ export default function UploadImage(props: { setImage: React.Dispatch<React.SetS
       onUploadError={(error: Error) => {
         alert(`ERROR! ${error.message}`);
       }}
+      content={{
+        allowedContent() {
+          return "2MB Max - .HEIC not supported";
+        },
+      }}
     />
   );
 }
