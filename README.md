@@ -25,14 +25,14 @@
 - [✅] Add Delete
 - [✅] Fix Search
 - [✅] Uploadthing for images
+- [✅] FK constraints (cascade recipe deletion to upvote_recipes)
+- [✅] Mobile compatibility rework
 - [ ] Add Categories
 - [ ] Add Loading display while router is loading on search
 - [ ] Rate limiting
 - [ ] Ability to Un-Upvote
-- [ ] FK constraints (cascade recipe deletion to upvote_recipes)
 - [ ] Tidy up recipe upload infra
 - [ ] Browse Recipes Pagination
 - [ ] Any Leftover Styling
-- [ ] Mobile compatibility rework
 ---- 1.0 Release
 - [ ] CI/CD / Testing / Build optimization / Branch Protection 

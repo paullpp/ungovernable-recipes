@@ -14,16 +14,18 @@ export default function Navbar() {
               <li><a href="/recipes">Browse Recipes</a></li>
               <li><a href="/account/recipes">My Recipes</a></li>
               <li><a href="/account/upvotes">My Upvotes</a></li>
+              <SignedIn>
+                <li>
+                  <a href="/recipes/upload"> Upload Recipe</a>
+                </li>
+              </SignedIn>
             </ul>
           </div>
         </SignedIn>
         <div className="flex-1">
-          <a href="/" className="btn btn-ghost sm:text-xl md:text-2xl text-neutral font-bold text-wrap">Ungovernable Recipes</a>
+          <a href="/" className="btn btn-ghost sm:text-xl md:text-2xl text-neutral font-bold text-wrap w-fit">Ungovernable Recipes</a>
         </div>
         <div className="flex-none gap-2">
-          <SignedIn>
-            <a href="/recipes/upload" className="btn btn-ghost rounded font-semibold text-lg"> Upload Recipe</a>
-          </SignedIn>
           <SearchBar />
           <div className="dropdown dropdown-end">
             <div tabIndex={0} role="button" className="btn btn-ghost">

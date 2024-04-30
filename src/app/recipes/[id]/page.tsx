@@ -16,13 +16,13 @@ export default async function RecipePage({
 
   return (
     <div className="flex flex-col m-10">
-      <div className="hero h-96 bg-base-200 rounded">
+      <div className="hero h-auto bg-base-200 rounded text-wrap">
         <div className="hero-content flex-col lg:flex-row-reverse">
-          {recipe.image && <img src={recipe.image} alt={recipe.name} className="max-w-sm rounded-lg object-fit h-80 mr-10" />}
+          {recipe.image && <img src={recipe.image} alt={recipe.name} className="rounded-lg h-28 md:h-80 mr-10" />}
           <div>
-            <h1 className="text-5xl font-bold">{recipe.name}</h1>
-            <p className="py-6">{recipe.shortDescription}</p>
-            <div className="flex flex-row gap-5">
+            <h1 className="text-2xl md:text-5xl font-bold">{recipe.name}</h1>
+            <p className="py-6 w-full text-wrap">{recipe.shortDescription}</p>
+            <div className="flex flex-row gap-5 flex-wrap">
               <UpvoteButton recipeId={Number(recipeId)} upvoted={upvoted} />
               <ShareButton />
               <ShoppingList shoppingList={recipe.ingredients}/>
@@ -30,7 +30,7 @@ export default async function RecipePage({
           </div>
         </div>
       </div>
-      <div className="flex flex-col m-5 gap-5">
+      <div className="flex flex-col m-5 gap-5 w-full text-wrap">
         <h1 className="text-2xl font-bold text-neutral"> Ingredients </h1>
         <div className="render-newline ml-5">
           {recipe.ingredients}
